@@ -2,7 +2,7 @@
 worker_processes 4
  
 # App location
-@app = "/var/rails/myapp/current"
+@app = "/var/rails/greenbean/current"
  
 # Listen on fs socket for better performance
 listen "#{@app}/tmp/sockets/unicorn.sock", :backlog => 64
