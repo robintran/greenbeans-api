@@ -5,6 +5,8 @@ gem 'capistrano'
 gem 'devise'
 gem 'factory_girl_rails', :require => false
 gem 'faker'
+gem 'haml'
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '3.2.11'
