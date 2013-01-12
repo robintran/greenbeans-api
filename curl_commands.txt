@@ -1,0 +1,3 @@
+Sessions Controller
+  curl -X POST 'http://localhost:3000/api/sessions.json' -d 'merchant[email]=fran@greenbean.com&merchant[password]=password'
+  
