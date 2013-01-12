@@ -8,6 +8,12 @@ class Token < ActiveRecord::Base
   validates_presence_of :merchant_id
 
   before_validation :generate_code 
+
+  def create_beans(quantity)
+    quantity.times do 
+      self.beans.create 
+    end
+  end
   
   private
   def generate_code 

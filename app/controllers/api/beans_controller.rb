@@ -1,2 +1,2 @@
-class Api::BeansController < ApplicationController
+class Api::BeansController < Api::BaseController
 end

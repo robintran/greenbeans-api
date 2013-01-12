@@ -1,3 +1,11 @@
 Sessions Controller
-  curl -X POST 'http://localhost:3000/api/sessions.json' -d 'merchant[email]=fran@greenbean.com&merchant[password]=password'
-  
+  login
+    curl -X POST 'http://localhost:3000/api/sessions.json' -d 'merchant[email]=fran@greenbean.com&merchant[password]=password'
+  sign out
+    curl -X POST 'http://localhost:3000/api/sessions/delete.json' -d 'auth_token='
+
+Tokens Controller
+  create token
+    curl -X POST 'http://localhost:3000/api/tokens.json' -d 'auth_token=uLYpXcn2qYNXhhsYu4SF&quantity=3'
+  list beans 
+    curl "http://localhost:3000/api/tokens/beans.json?auth_token=uLYpXcn2qYNXhhsYu4SF&code=LI6FK"
