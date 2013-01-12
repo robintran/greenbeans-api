@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
-gem 'capistrano'
+# gem 'capistrano'
 gem 'devise'
 gem 'factory_girl_rails', :require => false
 gem 'faker'
