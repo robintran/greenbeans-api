@@ -1,0 +1,39 @@
+source 'https://rubygems.org'
+
+gem 'bootstrap-sass'
+gem 'capistrano'
+gem 'devise'
+gem 'factory_girl_rails', :require => false
+gem 'faker'
+gem 'jquery-rails'
+gem 'pg'
+gem 'rails', '3.2.11'
+gem 'thin'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', :platforms => :ruby
+
+  gem 'uglifier', '>= 1.0.3'
+end
+
+group :development, :test do
+  gem 'debugger'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'pd'
+  gem 'rspec', '2.12.0'
+  gem 'rspec-rails', '2.12.0'
+  gem 'capybara', '1.1.4'
+  gem 'shoulda-matchers', '1.3.0'
+  gem 'rspec-mocks', '2.12.0'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'spork'
+end

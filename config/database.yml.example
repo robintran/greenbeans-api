@@ -1,0 +1,20 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: password
+  database: stonecrop_development
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: password
+  database: stonecrop_test
+  
+production:
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: password
+  database: stonecrop_production
