@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
-# gem 'capistrano'
+gem 'capistrano'
 gem 'devise'
 gem 'factory_girl_rails', :require => false
 gem 'faker'
@@ -10,7 +10,9 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '3.2.11'
+gem 'rvm-capistrano'
 gem 'thin'
+gem 'unicorn'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,3 +41,4 @@ group :development, :test do
   gem 'pry-rails'
   gem 'spork'
 end
+
