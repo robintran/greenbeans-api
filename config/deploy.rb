@@ -63,6 +63,7 @@ after "deploy:setup", "deploy:fix_setup_permissions"
 before "deploy:start", "deploy:fix_permissions"
 after "deploy:restart", "deploy:fix_permissions"
 after "assets:precompile", "deploy:fix_permissions"
+before  "deploy:assets:precompile", "symlink_database_and_system_folder"
 
 # Clean-up old releases
 after "deploy:restart", "deploy:cleanup"
@@ -113,7 +114,18 @@ namespace :deploy do
     run "#{sudo} find #{current_path}/tmp/ -type f -exec chmod 664 {} \\;"
     run "#{sudo} find #{current_path}/tmp/ -type d -exec chmod 775 {} \\;"
     run "#{sudo} find #{current_path}/tmp/ -exec chown #{user}:#{user_rails} {} \\;"
+    run "#{sudo} find #{current_path}/config/ -type f -exec chmod 664 {} \\;"
+    run "#{sudo} find #{current_path}/config/ -type d -exec chmod 775 {} \\;"
+    run "#{sudo} find #{current_path}/config/ -exec chown #{user}:#{user_rails} {} \\;"    
   end
+
+  task :symlink_database_and_system_folder do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end  
+
+  task :invoke_rake do
+    run("cd #{deploy_to}/current && /usr/local/bin/bundle exec rake #{ENV['task']} RAILS_ENV=#{rails_env}")  
+  end 
 
   # Precompile assets only when needed
   namespace :assets do
@@ -138,3 +150,11 @@ def remote_file_exists?(full_path)
   'true' ==  capture("if [ -e #{full_path} ]; then echo 'true'; fi").strip
 end
 
+def run_remote_rake(rake_cmd)
+  rake_args = ENV['RAKE_ARGS'].to_s.split(',')
+
+  cmd = "cd #{latest_release} && bundle exec rake RAILS_ENV=#{rails_env} #{rake_cmd}"
+  cmd += "['#{rake_args.join("','")}']" unless rake_args.empty?
+  run cmd
+  set :rakefile, nil if exists?(:rakefile)
+end

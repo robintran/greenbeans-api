@@ -3,18 +3,18 @@ development:
   encoding: unicode
   username: postgres
   password: password
-  database: stonecrop_development
+  database: greenbean_development
 
 test:
   adapter: postgresql
   encoding: unicode
   username: postgres
   password: password
-  database: stonecrop_test
+  database: greenbeans_test
   
 production:
   adapter: postgresql
   encoding: unicode
   username: postgres
-  password: password
-  database: stonecrop_production
+  password: gr2nbean
+  database: greenbeans_production
