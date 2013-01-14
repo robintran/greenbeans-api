@@ -9,12 +9,12 @@ test:
   adapter: postgresql
   encoding: unicode
   username: postgres
-  password: password
+  password: 
   database: greenbeans_test
   
 production:
   adapter: postgresql
   encoding: unicode
   username: postgres
-  password: gr2nbean
+  password: 
   database: greenbeans_production

@@ -29,4 +29,5 @@ Greenbean::Application.routes.draw do
     end
   end
   
+  root :to => 'api/docs#index'
 end

@@ -63,7 +63,7 @@ after "deploy:setup", "deploy:fix_setup_permissions"
 before "deploy:start", "deploy:fix_permissions"
 after "deploy:restart", "deploy:fix_permissions"
 after "assets:precompile", "deploy:fix_permissions"
-before  "deploy:assets:precompile", "symlink_database_and_system_folder"
+before  "deploy:assets:precompile", "deploy:symlink_database_and_system_folder"
 
 # Clean-up old releases
 after "deploy:restart", "deploy:cleanup"
@@ -120,11 +120,11 @@ namespace :deploy do
   end
 
   task :symlink_database_and_system_folder do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/database.yml #{current_path}/config/database.yml"
   end  
 
   task :invoke_rake do
-    run("cd #{deploy_to}/current && /usr/local/bin/bundle exec rake #{ENV['task']} RAILS_ENV=#{rails_env}")  
+    run("cd #{deploy_to}/current && bundle exec rake #{ENV['task']} RAILS_ENV=#{rails_env}")  
   end 
 
   # Precompile assets only when needed

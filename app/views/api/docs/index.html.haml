@@ -4,10 +4,16 @@
   %h4.span12.no-lmargin.mb10 Merchant
   %h5.span12.mb10 Sessions Controller
   .span12.mb20
-    .span4 login
+    .span4
+      %h3 login
+      %p Almost all the calls which need authentication requires a auth_token, which is returned by this call.
+      %p merchant[email]: mandatory field. Merchant email
+      %p merchant[password]: mandatory field. Merchant password
+      %p Type: POST
+
     .span7 
       .w_100 EXAMPLE
-      .span7.mb20 curl -X POST 'http://localhost:3000/api/merchant/sessions.json' -d 'merchant[email]=fran@greenbean.com&merchant[password]=password'
+      .span7.mb20 curl -X POST 'http://107.20.196.96/api/merchant/sessions.json' -d 'merchant[email]=fran@greenbean.com&merchant[password]=password'
       .w_100.mt20
         STATUS CODE SUMMARY
       .span6
@@ -16,11 +22,16 @@
         %br
         %strong 205:
         authenticate fail
+      .span6
+        {"status":200,"merchant":{"id":1,"email":"fran@greenbean.com","name":"fran","reset_password_sent_at":null,"remember_created_at":null,"sign_in_count":1,"current_sign_in_at":"2013-01-14T12:59:53Z","last_sign_in_at":"2013-01-14T12:59:53Z","current_sign_in_ip":"115.74.201.253","last_sign_in_ip":"115.74.201.253","authentication_token":"BKEWvqffyrc9m4khuNgw","created_at":"2013-01-14T12:32:05Z","updated_at":"2013-01-14T12:59:53Z","auth_token":"BKEWvqffyrc9m4khuNgw"},"message":"Sign in successfully."}  
   .span12.mt20
-    .span4 logout
+    .span4
+      %h3 logout
+      %p auth_token: mandatory parameter. The auth_token was provided by the app with Login call
+      %p Type: POST
     .span7
       .w_100 EXAMPLE
-      .span7.mb20 curl -X POST "http://localhost:3000/api/merchant/sessions/delete.json" -d "auth_token="
+      .span7.mb20 curl -X POST "http://107.20.196.96/api/merchant/sessions/delete.json" -d "auth_token="
       .w_100.mt20
         STATUS CODE SUMMARY
       .span6
@@ -33,10 +44,16 @@
 .span12.no-lmargin.mb20
   %h5.span12.mb10 Tokens Controller
   .span12.mb20
-    .span4 create token
+    .span4
+      %h3 create token
+      %p This call create a token, and generate beans which belong to this token. This API call requires authentication, with auth_token from the LOGIN call.
+      %p auth_token: mandatory parameter.
+      %p quantity: the quantity of beans generated.
+      %p Type: POST
+      %p This call return the token's code (5 characters code, with alpha-numeric characters)
     .span7
       .w_100 EXAMPLE
-      .span7.mb20 curl -X POST "http://localhost:3000/api/merchant/tokens.json" -d "auth_token=uLYpXcn2qYNXhhsYu4SF&quantity=3"
+      .span7.mb20 curl -X POST "http://107.20.196.96/api/merchant/tokens.json" -d "auth_token=uLYpXcn2qYNXhhsYu4SF&quantity=3"
       .w_100.mt20
         STATUS CODE SUMMARY
       .span6
@@ -44,10 +61,14 @@
         create token successfully
 
   .span12.mt20
-    .span4 list beans
+    .span4
+      %h3 List beans
+      %p Returns beans belongs to a token. We send a token code the the app, and get a list of beans' codes associated with this token.
+      %p auth_token: mandatory params.
+      %p code: token's code. 
     .span7
       .w_100 EXAMPLE
-      .span7.mb20 curl "http://localhost:3000/api/merchant/tokens/beans.json?auth_token=uLYpXcn2qYNXhhsYu4SF&code=LI6FK"
+      .span7.mb20 curl "http://107.20.196.96/api/merchant/tokens/beans.json?auth_token=uLYpXcn2qYNXhhsYu4SF&code=LI6FK"
       .w_100.mt20
         STATUS CODE SUMMARY
       .span6
@@ -61,10 +82,15 @@
   %h4.span12.no-lmargin.mb10 Consumer
   %h5.span12.mb10 Sessions Controller
   .span12.mb20
-    .span4 login
+    .span4
+      %h3 login
+      %p This is Login call for Consumer iOS app. It returns a auth_token, which is used for all API calls which requires authentication.
+      %p user[email]: email of Consumer
+      %p user[password]: Consumer's password
+      %p Type: POST
     .span7 
       .w_100 EXAMPLE
-      .span7.mb20 curl -X POST 'http://localhost:3000/api/consumer/sessions.json' -d 'user[email]=bhanu@greenbean.com&user[password]=password'
+      .span7.mb20 curl -X POST 'http://107.20.196.96/api/consumer/sessions.json' -d 'user[email]=bhanu@greenbean.com&user[password]=password'
       .w_100.mt20
         STATUS CODE SUMMARY
       .span6
@@ -74,10 +100,14 @@
         %strong 205:
         authenticate fail
   .span12.mt20
-    .span4 logout
+    .span4
+      %h3 Logout
+      %p This call logs out a Consumer from the app. 
+      %p auth_token: mandatory parameter
+      %p Type: POST
     .span7
       .w_100 EXAMPLE
-      .span7.mb20 curl -X POST 'http://localhost:3000/api/consumer/sessions/delete.json' -d 'auth_token='
+      .span7.mb20 curl -X POST 'http://107.20.196.96/api/consumer/sessions/delete.json' -d 'auth_token='
       .w_100.mt20
         STATUS CODE SUMMARY
       .span6
