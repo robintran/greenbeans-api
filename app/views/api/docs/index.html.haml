@@ -10,6 +10,7 @@
       %p merchant[email]: mandatory field. Merchant email
       %p merchant[password]: mandatory field. Merchant password
       %p Type: POST
+      %p Url: POST 'http://107.20.196.96/api/merchant/sessions.json
 
     .span7 
       .w_100 EXAMPLE
@@ -29,6 +30,7 @@
       %h3 logout
       %p auth_token: mandatory parameter. The auth_token was provided by the app with Login call
       %p Type: POST
+      %p Url: http://107.20.196.96/api/merchant/sessions/delete.json
     .span7
       .w_100 EXAMPLE
       .span7.mb20 curl -X POST "http://107.20.196.96/api/merchant/sessions/delete.json" -d "auth_token="
@@ -45,11 +47,12 @@
   %h5.span12.mb10 Tokens Controller
   .span12.mb20
     .span4
-      %h3 create token
+      %h3 Create token
       %p This call create a token, and generate beans which belong to this token. This API call requires authentication, with auth_token from the LOGIN call.
       %p auth_token: mandatory parameter.
       %p quantity: the quantity of beans generated.
       %p Type: POST
+      %p Url: http://107.20.196.96/api/merchant/tokens.json
       %p This call return the token's code (5 characters code, with alpha-numeric characters)
     .span7
       .w_100 EXAMPLE
@@ -66,6 +69,8 @@
       %p Returns beans belongs to a token. We send a token code the the app, and get a list of beans' codes associated with this token.
       %p auth_token: mandatory params.
       %p code: token's code. 
+      %p Type: GET
+      %p Url: http://107.20.196.96/api/merchant/tokens/beans.json
     .span7
       .w_100 EXAMPLE
       .span7.mb20 curl "http://107.20.196.96/api/merchant/tokens/beans.json?auth_token=uLYpXcn2qYNXhhsYu4SF&code=LI6FK"
@@ -88,6 +93,7 @@
       %p user[email]: email of Consumer
       %p user[password]: Consumer's password
       %p Type: POST
+      %p Url: http://107.20.196.96/api/consumer/sessions.json
     .span7 
       .w_100 EXAMPLE
       .span7.mb20 curl -X POST 'http://107.20.196.96/api/consumer/sessions.json' -d 'user[email]=bhanu@greenbean.com&user[password]=password'
@@ -105,6 +111,7 @@
       %p This call logs out a Consumer from the app. 
       %p auth_token: mandatory parameter
       %p Type: POST
+      %p Url: http://107.20.196.96/api/consumer/sessions/delete.json
     .span7
       .w_100 EXAMPLE
       .span7.mb20 curl -X POST 'http://107.20.196.96/api/consumer/sessions/delete.json' -d 'auth_token='

@@ -63,7 +63,7 @@ after "deploy:setup", "deploy:fix_setup_permissions"
 before "deploy:start", "deploy:fix_permissions"
 after "deploy:restart", "deploy:fix_permissions"
 after "assets:precompile", "deploy:fix_permissions"
-before  "deploy:assets:precompile", "deploy:symlink_database_and_system_folder"
+before  "deploy:start", "deploy:symlink_database_and_system_folder"
 
 # Clean-up old releases
 after "deploy:restart", "deploy:cleanup"
