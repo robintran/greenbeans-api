@@ -1,6 +1,6 @@
-class Api::BaseController < ApplicationController
+class Api::Consumer::BaseController < ApplicationController
   skip_before_filter :verify_authenticity_token
-  before_filter  :authenticate_merchant!
+  before_filter  :authenticate_user!
 
   respond_to :json
 

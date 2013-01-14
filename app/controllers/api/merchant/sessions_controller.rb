@@ -1,4 +1,4 @@
-class Api::SessionsController < Api::BaseController
+class Api::Merchant::SessionsController < Api::Merchant::BaseController
   skip_before_filter :authenticate_merchant!, :only => [:create]
 
   def create

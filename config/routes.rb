@@ -1,18 +1,30 @@
 Greenbean::Application.routes.draw do
-  devise_for :merchants
+  devise_for :merchants, :users
 
   namespace :api do
-    get 'docs/index'
+    get 'docs/index' 
     match 'docs' => 'docs#index'
-    resources :beans
-    resources :sessions, :only  => [:create] do 
-      collection do 
-        post :delete
+     
+    namespace :merchant do
+      resources :beans
+      resources :tokens, :only => [:create] do 
+        collection do 
+          get :beans
+        end
+      end
+      
+      resources :sessions, :only  => [:create] do 
+        collection do 
+          post :delete
+        end
       end
     end
-    resources :tokens, :only => [:create] do 
-      collection do 
-        get :beans
+    
+    namespace :consumer do
+      resources :sessions, :only  => [:create] do 
+        collection do 
+          post :delete
+        end
       end
     end
   end
