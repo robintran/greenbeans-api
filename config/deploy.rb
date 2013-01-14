@@ -14,7 +14,7 @@ set :application, "myapp"
 set :rails_env, :production
 
 # Deploy username and sudo username
-set :user, "ubuntu"
+set :user, ENV['USER'] # ubuntu
 set :user_rails, ENV['USER']
 
 # App Domain
@@ -47,10 +47,11 @@ set :deploy_to, "/var/rails/#{application}"
 
 # We have all components of the app on the same server
 server domain, :app, :web, :db, :primary => true
+default_run_options[:pty] = true
 
 # Install RVM and Ruby before deploy
-before "deploy:setup", "rvm:install_rvm"
-before "deploy:setup", "rvm:install_ruby"
+# before "deploy:setup", "rvm:install_rvm"
+# before "deploy:setup", "rvm:install_ruby"
 
 # Apply default RVM version for the current account
 after "deploy:setup", "deploy:set_rvm_version"
@@ -61,13 +62,13 @@ after "deploy:setup", "deploy:fix_setup_permissions"
 # Fix permissions
 before "deploy:start", "deploy:fix_permissions"
 after "deploy:restart", "deploy:fix_permissions"
-after "assetsrecompile", "deploy:fix_permissions"
+after "assets:precompile", "deploy:fix_permissions"
 
 # Clean-up old releases
 after "deploy:restart", "deploy:cleanup"
 
 # Unicorn config
-set :unicorn_config, "#{current_path}/config/unicorn.conf.rb"
+set :unicorn_config, "#{current_path}/config/unicorn.rb"
 set :unicorn_binary, "bash -c 'source /etc/profile.d/rvm.sh && bundle exec unicorn_rails -c #{unicorn_config} -E #{rails_env} -D'"
 set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
 set :su_rails, "sudo -u #{user_rails}"
@@ -121,12 +122,12 @@ namespace :deploy do
       if remote_file_exists?(current_path)
         from = source.next_revision(current_revision)
         if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
-          run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assetsrecompile}
+          run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
         else
           logger.info "Skipping asset pre-compilation because there were no asset changes"
         end
       else
-        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assetsrecompile}
+        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
       end
     end
   end
