@@ -1,2 +1,2 @@
-class Api::Merchant::BeansController < Api::BaseController
+class Api::Merchant::BeansController < Api::Merchant::BaseController
 end

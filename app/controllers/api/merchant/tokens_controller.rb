@@ -1,4 +1,4 @@
-class Api::TokensController < Api::BaseController
+class Api::Merchant::TokensController < Api::Merchant::BaseController
 
   def create 
     @token = current_merchant.tokens.create 
