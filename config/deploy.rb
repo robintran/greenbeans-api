@@ -8,7 +8,7 @@ require "bundler/capistrano"
 require "rvm/capistrano"
 
 # Application name
-set :application, "myapp"
+set :application, "greenbeans"
 
 # Application environment
 set :rails_env, :production
