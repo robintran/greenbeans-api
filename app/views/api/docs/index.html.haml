@@ -1,0 +1,57 @@
+.span12.no-lmargin
+  %h3 Greenbeans API Documentation
+.span12.no-lmargin.mb20
+  %h4.span12.no-lmargin.mb10 Sessions Controller
+  .span12.no-lmargin.mb20
+    .span4 login
+    .span7 
+      .w_100 EXAMPLE
+      .span7.mb20 curl -X POST 'http://localhost:3000/api/sessions.json' -d 'merchant[email]=fran@greenbean.com&merchant[password]=password'
+      .w_100.mt20
+        STATUS CODE SUMMARY
+      .span6
+        %strong 200: 
+        login successfully
+        %br
+        %strong 205:
+        authenticate fail
+  .span12.no-lmargin.mt20
+    .span4 logout
+    .span7
+      .w_100 EXAMPLE
+      .span7.mb20 curl -X POST 'http://localhost:3000/api/sessions/delete.json' -d 'auth_token='
+      .w_100.mt20
+        STATUS CODE SUMMARY
+      .span6
+        %strong 200:
+        logout successfully
+        %br 
+        %strong 205: 
+        Not authorize
+        
+.span12.no-lmargin.mb20
+  %h4.span12.no-lmargin.mb10 Tokens Controller
+  .span12.no-lmargin.mb20
+    .span4 create token
+    .span7
+      .w_100 EXAMPLE
+      .span7.mb20 curl -X POST 'http://localhost:3000/api/tokens.json' -d 'auth_token=uLYpXcn2qYNXhhsYu4SF&quantity=3'
+      .w_100.mt20
+        STATUS CODE SUMMARY
+      .span6
+        %strong 200:
+        create token successfully
+
+  .span12.no-lmargin.mt20
+    .span4 list beans
+    .span7
+      .w_100 EXAMPLE
+      .span7.mb20 curl 'http://localhost:3000/api/tokens/beans.json?auth_token=uLYpXcn2qYNXhhsYu4SF&code=LI6FK'
+      .w_100.mt20
+        STATUS CODE SUMMARY
+      .span6
+        %strong 200:
+        OK
+        %br 
+        %strong 205: 
+        Token not found

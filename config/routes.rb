@@ -1,7 +1,9 @@
 Greenbean::Application.routes.draw do
   devise_for :merchants
 
-  namespace :api do 
+  namespace :api do
+    get 'docs/index'
+    match 'docs' => 'docs#index'
     resources :beans
     resources :sessions, :only  => [:create] do 
       collection do 
