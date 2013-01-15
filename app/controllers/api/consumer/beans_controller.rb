@@ -1,4 +1,5 @@
 class Api::Consumer::BeansController < Api::Consumer::BaseController
+  skip_before_filter authenticate_user!, :only  => [:validate]
 
   def validate
     render json: {valid: false, message: "param code cannot be blank"} and return if params[:code].blank?
