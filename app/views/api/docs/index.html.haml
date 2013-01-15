@@ -129,19 +129,18 @@
     .span4
       %h3 Validate Valid of Bean
       %p Consumer app will use this bean to validate if a code is valid or not. Code maybe not valid because wrong of code, or had been used.
-      %p user[email]: email of Consumer
-      %p user[password]: Consumer's password
-      %p Type: POST
-      %p Url: http://107.20.196.96/api/consumer/sessions.json
+      %p code: mandatory parameter. Bean code for validation
+      %p Type: GET
+      %p Url: http://107.20.196.96/api/consumer/beans/validate.json
     .span7
       .w_100 EXAMPLE
-      .span7.mb20 curl -X POST 'http://107.20.196.96/api/consumer/sessions.json' -d 'user[email]=bhanu@greenbean.com&user[password]=password'
+      .span7.mb20 curl  'http://107.20.196.96/api/consumer/beans/validate.json?code='
       .w_100.mt20
         STATUS CODE SUMMARY
       .span6
         %strong 200:
-        login successfully
+        Code is valid
         %br
         %strong 205:
-        authenticate fail
+        Code is invalid. Please examine message field for the reason.
 
