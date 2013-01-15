@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass'
 gem 'capistrano'
 gem 'devise'
-gem 'factory_girl_rails', :require => false
 gem 'faker'
 gem 'haml'
 gem 'haml-rails'
@@ -31,6 +30,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-spork'
+  gem 'faker'
   gem 'pd'
   gem 'rspec', '2.12.0'
   gem 'rspec-rails', '2.12.0'
@@ -40,5 +40,5 @@ group :development, :test do
   gem 'pry'
   gem 'pry-rails'
   gem 'spork'
+  gem 'factory_girl_rails'
 end
-
