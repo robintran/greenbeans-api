@@ -39,9 +39,8 @@ class Api::MatrixsController < ApplicationController
 
   def validate_matrix(matrix)
     valid = true
-    n_row = matrix.length 
     matrix.each do |row|  
-      valid = false if row.length != n_row
+      valid = false if row.empty?
     end
     valid
   end
