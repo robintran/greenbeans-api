@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130114070947) do
+ActiveRecord::Schema.define(:version => 20130115080845) do
 
   create_table "beans", :force => true do |t|
     t.string   "code",                            :null => false
@@ -46,6 +46,30 @@ ActiveRecord::Schema.define(:version => 20130114070947) do
   add_index "merchants", ["email"], :name => "index_merchants_on_email", :unique => true
   add_index "merchants", ["name"], :name => "index_merchants_on_name", :unique => true
   add_index "merchants", ["reset_password_token"], :name => "index_merchants_on_reset_password_token", :unique => true
+
+  create_table "prizes", :force => true do |t|
+    t.integer  "raffle_id"
+    t.text     "tier",       :default => "---\n:first: 0\n:second: 0\n:third: 0\n"
+    t.string   "p_type"
+    t.datetime "created_at",                                                        :null => false
+    t.datetime "updated_at",                                                        :null => false
+  end
+
+  add_index "prizes", ["raffle_id"], :name => "index_prizes_on_raffle_id"
+
+  create_table "raffles", :force => true do |t|
+    t.integer  "num_of_winner"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "drawing_time"
+    t.boolean  "repeat"
+    t.text     "instructions"
+    t.integer  "merchant_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "raffles", ["merchant_id"], :name => "index_raffles_on_merchant_id"
 
   create_table "tokens", :force => true do |t|
     t.string   "code",        :null => false

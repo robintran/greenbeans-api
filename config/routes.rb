@@ -6,15 +6,18 @@ Greenbean::Application.routes.draw do
     match 'docs' => 'docs#index'
 
     namespace :merchant do
-      resources :tokens, :only => [:create] do
-        collection do
-          get :beans
-        end
-      end
-
+      
+      resources :raffles, :only => [:create, :destroy]
+      
       resources :sessions, :only  => [:create] do
         collection do
           post :delete
+        end
+      end
+      
+      resources :tokens, :only => [:create] do
+        collection do
+          get :beans
         end
       end
     end

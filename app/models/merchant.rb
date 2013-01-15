@@ -9,8 +9,9 @@ class Merchant < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 
+  has_many :raffles
   has_many :tokens 
-
+  
   validates_presence_of :email, :name
 
   after_create :generate_first_token 
