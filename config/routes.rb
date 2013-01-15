@@ -4,6 +4,7 @@ Greenbean::Application.routes.draw do
   namespace :api do
     get 'docs/index'
     match 'docs' => 'docs#index'
+    match "/matrix/min_weigth" => "matrixs#min_weigth_path", :via  => :post
 
     namespace :merchant do
       
