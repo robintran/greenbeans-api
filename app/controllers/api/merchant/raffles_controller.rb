@@ -18,4 +18,16 @@ class Api::Merchant::RafflesController < Api::Merchant::BaseController
     end
   end
   
+  def update
+    @raffle = Raffle.where(id: params[:id]).first
+    if @raffle
+      if @raffle.update_attributes(params[:raffle])
+        render json: {status: 200, message: "updated raffle successfully."}
+      else
+        render json: {status: 205, message: @raffle.errors.full_messages}
+      end
+    else
+      render json: {status: 205, message: "coundn't found raffle with id #{params[:id]}."}
+    end
+  end
 end

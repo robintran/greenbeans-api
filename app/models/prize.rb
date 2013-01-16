@@ -3,4 +3,6 @@ class Prize < ActiveRecord::Base
   attr_accessible :p_type, :tier
   
   TYPE = ['money', 'gift', 'vourcher']
+  
+  validates :p_type, :inclusion => { :in => TYPE }
 end

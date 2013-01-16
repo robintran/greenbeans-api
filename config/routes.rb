@@ -8,7 +8,7 @@ Greenbean::Application.routes.draw do
 
     namespace :merchant do
       
-      resources :raffles, :only => [:create, :destroy]
+      resources :raffles, :only => [:create, :destroy, :update]
       
       resources :sessions, :only  => [:create] do
         collection do
