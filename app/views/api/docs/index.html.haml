@@ -50,13 +50,13 @@
       %h3 Create token
       %p This call create a token, and generate beans which belong to this token. This API call requires authentication, with auth_token from the LOGIN call.
       %p auth_token: mandatory parameter.
-      %p quantity: the quantity of beans generated.
+      %p beans_count: the quantity of beans generated.
       %p Type: POST
       %p Url: http://107.20.196.96/api/merchant/tokens.json
       %p This call return the token's code (5 characters code, with alpha-numeric characters)
     .span7
       .w_100 EXAMPLE
-      .span7.mb20 curl -X POST "http://107.20.196.96/api/merchant/tokens.json" -d "auth_token=uLYpXcn2qYNXhhsYu4SF&quantity=3"
+      .span7.mb20 curl -X POST "http://107.20.196.96/api/merchant/tokens.json" -d "auth_token=uLYpXcn2qYNXhhsYu4SF&beans_count=3"
       .w_100.mt20
         STATUS CODE SUMMARY
       .span6
