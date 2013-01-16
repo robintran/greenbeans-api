@@ -5,6 +5,7 @@ class Api::Merchant::BaseController < ApplicationController
   respond_to :json
 
   rescue_from Exception do |exception|
-    render :json => {status: 500, auth: false, message: exception.message}
+    output = generate_exception_output(exception)
+    render :json => output
   end
 end
