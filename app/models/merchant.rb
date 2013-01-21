@@ -13,7 +13,7 @@ class Merchant < ActiveRecord::Base
   has_many :tokens 
   
   validates_presence_of :email, :name
-
+  validates :name, uniqueness: true
   after_create :generate_first_token 
 
   private 

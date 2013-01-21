@@ -12,6 +12,18 @@ class ApplicationController < ActionController::Base
     }
   end
   
+  def validate_resource_params(resource, *args)
+    res = params[resource] || {}
+    args.each { |name|
+      if res[name].blank?
+        raise Exceptions::ApiException.new(
+          :major_code => 205,
+          :sub1 => name
+        ), "Required parameter missing: #{resource} #{name}"
+      end
+    }
+  end
+  
   def generate_exception_output(exception)
     output = {
       'message'     => exception.message,

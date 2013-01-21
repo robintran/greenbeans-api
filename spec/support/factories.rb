@@ -18,5 +18,11 @@ FactoryGirl.define do
       tier tier_hash
     end
   end
+  
+  factory :user do
+    email Faker::Internet.email
+    password 'password'
+    password_confirmation 'password'
+  end
    
 end
