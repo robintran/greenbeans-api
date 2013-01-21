@@ -20,6 +20,7 @@ Greenbean::Application.routes.draw do
     namespace :merchant do
       devise_scope :merchant do
         match 'registrations' => 'registrations#create'
+        match 'passwords' => 'passwords#create'
       end
       resources :raffles, :only => [:create, :destroy, :update]
       
