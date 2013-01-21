@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Green Beans</title>
+	<link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet"  href="../css/greenBeans.css" />
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="homeBeans" class="home-bean-screen" data-fullscreen="true">
+		<div data-role="header" class="home-bean-toolbar">
+			<div id="home-bean-title"><img src="../resource/images/greenbeansText.png" width=112 class="home-bean-title"/></div>
+			<a data-role="button" class="home-bean-toolbar-back-button"></a>
+
+			<script>
+				$( ".home-bean-toolbar-back-button" ).bind( "click", function(event, ui) {
+					$.mobile.changePage( "claimBeans.html", { transition: "slide", reverse: true} );
+				});
+			</script>
+
+		</div>
+	</div>
+</body>
+</html>

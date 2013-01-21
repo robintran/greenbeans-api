@@ -1,0 +1,257 @@
+.ui-body-c, .ui-body-c input, .ui-body-c select, .ui-body-c textarea, .ui-body-c button {
+	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+body {
+	padding: 0;
+}
+
+.ui-content {
+	padding: 0;
+}
+
+.home-screen {
+	height: 100%;
+}
+
+
+.home-screen-content {
+	height: 100%;
+	background-image: url("../resource/images/whiteBkg.png");
+}
+
+.logo-text {
+	margin-top: 40px;
+}
+
+.logo-image {
+	margin-top: -30px;
+	margin-bottom: -45px;
+}
+
+.home-screen .content-first {
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3d9524), color-stop(100%, #7ce061));
+	margin: 0;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+.home-screen .content-first .question{
+	margin-top: 20px;
+	color: white;
+	text-shadow: 0 1px 0 #009614;
+	font-size: 1.0em;
+}
+
+.home-screen .content-secondary {
+	text-align: center;
+}
+
+.content-secondary .home-play-beans-btn {
+	background-image: url("../resource/images/play_beans_btn.png");
+	height: 50px;
+	width: 284px;
+	margin: 20px auto 0 auto;
+}
+
+.content-secondary .home-play-beans-btn.ui-btn-hover-c {
+	opacity: 0.9;
+}
+.content-secondary .home-play-beans-btn.ui-btn-down-c {
+	opacity: 0.8;
+}
+
+.home-screen .join-btn .ui-icon,
+.home-screen .cash-btn .ui-icon,
+.home-screen .more-btn .ui-icon{
+	width: 24px;
+	height: 17px;
+}
+
+.home-screen .join-btn.ui-btn-icon-left > .ui-btn-inner > .ui-icon, .home-screen .join-btn.ui-btn-icon-right > .ui-btn-inner > .ui-icon,
+.home-screen .cash-btn.ui-btn-icon-left > .ui-btn-inner > .ui-icon, .home-screen .cash-btn.ui-btn-icon-right > .ui-btn-inner > .ui-icon,
+.home-screen .more-btn.ui-btn-icon-left > .ui-btn-inner > .ui-icon, .home-screen .more-btn.ui-btn-icon-right > .ui-btn-inner > .ui-icon {
+	top: 50%;
+	margin-top: -11px;
+}
+
+.ui-icon-joinIcon,
+.ui-icon-cashIcon,
+.ui-icon-starIcon {
+	background: rgba(0,0,0,.0);
+	-moz-background-size: 24px 17px;
+	-o-background-size: 24px 17px;
+	-webkit-background-size: 24px 17px;
+	background-size: 24px 17px;
+	box-shadow: none;
+}
+
+.ui-icon-starIcon {
+	background-image: url("../resource/images/starIcon.png");
+}
+
+.ui-icon-cashIcon {
+	background-image: url("../resource/images/cashIcon.png");
+}
+
+.ui-icon-joinIcon {
+	background-image: url("../resource/images/joinIcon.png");
+}
+
+.join-btn, .cash-btn, .more-btn {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	margin: 0 auto;
+	background-image: none;
+	border-top: none;
+	height: 25px;
+	width: 280px
+}
+
+.join-btn .ui-btn-corner-all, .cash-btn .ui-btn-corner-all, .more-btn .ui-btn-corner-all {
+	border: none;
+	text-align: left;
+}
+
+.join-btn .ui-btn-text, .cash-btn .ui-btn-text, .more-btn .ui-btn-text {
+	margin-left: 5px;
+	color: white;
+	text-shadow: 0 1px 0 #009614;
+	font-size: 0.75em;
+	font-weight: normal;
+}
+
+.join-btn.ui-btn-down-c .ui-btn-text, .cash-btn.ui-btn-down-c .ui-btn-text, .more-btn.ui-btn-down-c .ui-btn-text {
+	color: gray;
+}
+
+/*Page 2*/
+
+.claim-bean-screen {
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3d9524), color-stop(100%, #7ce061));
+	margin: 0;
+	height: 100%;
+	text-align: center;
+}
+
+.claim-bean-screen .logo {
+	margin-top: 40px;
+}
+
+.claim-bean-screen .hint-text {
+	margin-top: 33px;
+	font-size: 1.05em;
+	font-weight: bold;
+	color: white;
+	text-shadow: 0 1px 0 #009614;
+}
+
+.claim-bean-screen .take-text {
+	margin-top: 130px;
+	font-size: .8em;
+	font-weight: bold;
+	color: white;
+	text-shadow: 0 1px 0 #009614;
+}
+
+.claim-bean-screen .error-text {
+	display: none;
+	width: 280px;
+	background: #fbffdc;
+	font-size: 0.65em;
+	font-weight: bold;
+	color: #6e7273;
+	text-shadow: 0 1px 0 #009614;
+	padding: 5px 0 8px 0;
+	margin: 20px auto -10px auto;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #e1b900;
+}
+
+.claim-bean-screen .token-input {
+	width: 280px;
+	margin: 20px auto;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.claim-bean-screen .claim-beans-btn {
+	width: 280px;
+	margin: -10px auto;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #a2a7a8;
+	color: #6e7273;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eff2f3), color-stop(2%, #eff2f3), color-stop(3%, #e0e8e9), color-stop(100%, #c1c6c7));
+}
+
+.claim-bean-screen .claim-beans-btn.ui-btn-down-c {
+	border: 1px solid #565959;
+	text-shadow: 0 1px 0 #7a7b7c;
+	color: #3a3c3d;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7f8181), color-stop(2%, #7f8181), color-stop(3%, #777b7c), color-stop(100%, #686b6b));
+}
+
+.claim-bean-screen .my-beans-btn {
+	color: #fff;
+	width: 143px;
+	height: 41px;
+	margin: 10px auto;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #6e7273;
+	text-shadow: 0 1px 0 #535556;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b2b2b4), color-stop(2%, #b2b2b4), color-stop(3%, #909193), color-stop(100%, #616163));
+}
+
+.claim-bean-screen .my-beans-btn.ui-btn-down-c {
+	color: #888888;
+	border: 1px solid #3a3c3d;
+	text-shadow: 0 1px 0 #3a3b3b;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5e5e60), color-stop(2%, #5e5e60), color-stop(3%, #4b4c4c), color-stop(100%, #353536));
+}
+
+/*Page 3 home beans*/
+
+.home-bean-screen {
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e5e5e5), color-stop(100%, #ffffff));
+	margin: 0;
+	height: 100%;
+	text-align: center;
+}
+
+.home-bean-screen .home-bean-toolbar {
+	height: 44px;
+	background-image: url("../resource/images/toolbar_bg.png");
+	border-top: none;
+}
+
+.home-bean-screen .home-bean-title {
+	margin-top: 10px;
+}
+
+.home-bean-screen .home-bean-toolbar-back-button {
+	background: rgba(0,0,0,.0);
+	background-image: url("../resource/images/back_btn.png");
+	width: 59px;
+	height: 32px;
+	border-radius: 0;
+	border: none;
+	margin-top: 3px;
+	border-bottom: none;
+	box-shadow: none;
+}
+
+.home-bean-screen .home-bean-toolbar-back-button.ui-btn-down-a {
+	opacity: 0.7;
+}
