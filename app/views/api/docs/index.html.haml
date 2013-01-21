@@ -2,6 +2,28 @@
   %h3 Greenbeans API Documentation
 .span12.no-lmargin.mb20
   %h4.span12.no-lmargin.mb10 Merchant
+  %h5.span12.mb10 Registrations Controller
+  .span12.mb20
+    .span4
+      %h3 Create
+      %p Register a new merchant.
+      %p Type: POST
+      %p Url: POST 'http://107.20.196.96/api/merchant/registrations.json
+
+    .span7
+      .w_100 EXAMPLE
+      .span7.mb20 curl -X POST 'http://107.20.196.96/api/merchant/registrations.json' -d 'merchant[name]=Francesco%20Pinto&merchant[email]=fran@greenbean.com&merchant[password]=password'
+      .w_100.mt20
+        STATUS CODE SUMMARY
+      .span6
+        %strong 200:
+        Register successfully
+        %br
+        %strong 205:
+        Register fail
+      .span6.word_wrap
+        {"status":200,"merchant":{"created_at":"2013-01-21T07:26:09Z","email":"fran@greenbean.com","id":5,"name":"Francesco Pinto","updated_at":"2013-01-21T07:26:09Z"}}
+        
   %h5.span12.mb10 Sessions Controller
   .span12.mb20
     .span4
@@ -86,6 +108,28 @@
 
 .span12.no-lmargin.mb20
   %h4.span12.no-lmargin.mb10 Consumer
+  %h5.span12.mb10 Registrations Controller
+  .span12.mb20
+    .span4
+      %h3 Create
+      %p Register a new Consumer.
+      %p Type: POST
+      %p Url: POST 'http://107.20.196.96/api/consumer/registrations.json
+
+    .span7
+      .w_100 EXAMPLE
+      .span7.mb20 curl -X POST 'http://107.20.196.96/api/consumer/registrations.json' -d 'user[email]=fran@greenbean.com&user[password]=password'
+      .w_100.mt20
+        STATUS CODE SUMMARY
+      .span6
+        %strong 200:
+        Register successfully
+        %br
+        %strong 205:
+        Register fail
+      .span6.word_wrap
+        {"status":200,"consumer":{"created_at":"2013-01-21T07:30:38Z","email":"fran@greenbean.com","id":2,"updated_at":"2013-01-21T07:30:38Z"}}
+        
   %h5.span12.mb10 Sessions Controller
   .span12.mb20
     .span4
