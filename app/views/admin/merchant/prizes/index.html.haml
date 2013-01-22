@@ -7,7 +7,7 @@
     %ul.list-view.grid-view.clearfix
       %li.dark
         .title-item= link_to "Active Raffles"
-        .numb-item 16
+        .numb-item= Raffle.actives.size
         .meta-item.clearfix
           .view= link_to "View", "#"
           .link= link_to "?", "#"
@@ -51,16 +51,17 @@
         %span 4
         ACTIVE RAFFLES
       %ul.list-active
-        %li
-          .col1
-            %i
-          .col2
-            %h2= link_to "<strong>Raffle:</strong> $500 Cash</a>".html_safe
-            %div Countdown: 10 Days, 5 hours, 16 minutes
-            %p
-              %label ENTRIES: 34
-              %label BEAN COST: 5
-          .col3= link_to "Detail", "#", class: "btn"
+        - Raffle.actives.each do |raffle|
+          %li
+            .col1
+              %i
+            .col2
+              %h2= link_to "<strong>Raffle:</strong> $500 Cash</a>".html_safe
+              %div Countdown: #{distance_of_time_in_words(Time.now, raffle.drawing_time)}
+              %p
+                %label ENTRIES: 34
+                %label BEAN COST: 5
+            .col3= link_to "Detail", "#", class: "btn"
         %li
           .col1
             %i
