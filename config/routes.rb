@@ -10,6 +10,7 @@ Greenbean::Application.routes.draw do
       root :to => 'reports#index'
       devise_for :merchants
       
+      resources :actions
       resources :prizes
     end
   end

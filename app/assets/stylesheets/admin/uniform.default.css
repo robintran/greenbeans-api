@@ -19,7 +19,7 @@ div.selector,
 div.selector span, 
 div.checker span, 
 div.radio span {
-  background-image: url(../assets/admin/uniform.png);
+  background-image: url(../admin/uniform.png);
   background-repeat: no-repeat;
 }
 

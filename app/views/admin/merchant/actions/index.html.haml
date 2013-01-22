@@ -1,0 +1,88 @@
+#middle.clearfix
+  .span7
+    %h3.big-head
+      Customer Actions 
+      = link_to "Add Action", '#', class: "green-btn"
+    %h4.head-small SOCIAL PROOF
+    %ul.list-view.grid-view.clearfix
+      %li
+        .title-item= link_to "YELP REVIEWS", "#"
+        .numb-item 16
+        .meta-item.clearfix
+          .view= link_to 'View', '#'
+          .link= link_to "?", '#'
+      %li
+        .title-item= link_to "FACEBOOK LIKES", "#"
+        .numb-item 16
+        .meta-item.clearfix
+          .view= link_to 'View', '#'
+          .link= link_to "?", '#'
+      %li.dark
+        .title-item= link_to "Twitter Follows", "#"
+        .numb-item 12
+        .meta-item.clearfix
+          .view= link_to 'View', '#'
+          .link= link_to "?", '#'
+      %li.dark
+        .title-item= link_to "Pinterest Follows", "#"
+        .numb-item 16
+        .meta-item.clearfix
+          .view= link_to 'View', '#'
+          .link= link_to "?", '#'  
+    %h4.head-small K FACTOR
+    %ul.list-view.grid-view.clearfix
+      %li.dark
+        .title-item= link_to "Tweets", "#"
+        .numb-item 2323
+        .meta-item.clearfix
+          .view= link_to 'View', '#'
+          .link= link_to "?", '#'  
+      %li.dark
+        .title-item= link_to "Facebook Shares", "#"
+        .numb-item 333
+        .meta-item.clearfix
+          .view= link_to 'View', '#'
+          .link= link_to "?", '#'
+      %li.dark
+        .title-item= link_to "Pins & Repins", "#"
+        .numb-item 12
+        .meta-item.clearfix
+          .view= link_to 'View', '#'
+          .link= link_to "?", '#'
+      %li.dark
+        .title-item= link_to "Friend Invites", "#"
+        .numb-item 16
+        .meta-item.clearfix
+          .view= link_to 'View', '#'
+          .link= link_to "?", '#'    
+    %h4.head-small
+      VOUCHER DISTRIBUTION
+      = link_to "Add Voucher", "#", class: "green-btn"
+    %ul.list-view.grid-view.clearfix
+      %li.dark
+        .title-item= link_to "Vouchers Shared", "#", class: "red-bullet"
+        .numb-item 2323
+        .meta-item.clearfix
+          .view.fav= link_to 'CREATE VOUCHER', '#'
+          .link= link_to "?", '#'
+      %li.dark
+        .title-item= link_to "Vouchers Shared", "#", class: "red-bullet"
+        .numb-item 333
+        .meta-item.clearfix
+          .view.fav= link_to 'CREATE VOUCHER', '#'
+          .link= link_to "?", '#'
+  .span5
+    .bg-inner
+      .pad20
+        %p.back= link_to "Back", "#"
+        ~ form_for :action, html: {class: "add-action"} do |f|
+          %h2 Add an Action
+          .form-wrap.bor-bot
+            = select_tag 'validate_method', options_for_select(["Yelp Review"])
+            %label
+              %strong Validation Method
+              %br Green Beans Staff will validate      
+          .form-wrap
+            = text_field_tag :page_url, '', class: 'email', placeholder: "Your Yelp Page URL"
+          .form-submit
+            = submit_tag "Create", class: "btn"
