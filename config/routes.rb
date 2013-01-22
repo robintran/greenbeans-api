@@ -40,6 +40,7 @@ Greenbean::Application.routes.draw do
     namespace :consumer do
       devise_scope :user do
         match 'registrations' => 'registrations#create'
+        match 'passwords' => 'passwords#create'
       end
       
       resources :sessions, :only  => [:create] do

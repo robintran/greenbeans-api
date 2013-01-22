@@ -64,7 +64,28 @@
         %br
         %strong 205:
         Not authorize
-
+  
+  %h5.span12.mb10 Passwords Controller
+  .span12.mb20
+    .span4
+      %h3 Reset Password
+      %p This call send an instruction email to reset password, This email content a link to reset password.
+      %p auth_token: mandatory parameter.
+      %p beans_count: the quantity of beans generated.
+      %p Type: POST
+      %p Url: http://107.20.196.96/api/merchant/passwords.json
+    .span7
+      .w_100 EXAMPLE
+      .span7.mb20 curl -X POST "http://107.20.196.96/api/merchant/passwords.json" -d "merchant[email]=fran@greenbean.com"
+      .w_100.mt20
+        STATUS CODE SUMMARY
+      .span6
+        %strong 200:
+        Send email successfully
+        %br
+        %strong 205:
+        Send email fail
+        
   .span12.no-lmargin.mb20
     %h5.span12.mb10 Tokens Controller
     .span12.mb20
@@ -84,7 +105,9 @@
         .span6
           %strong 200:
           create token successfully
-
+          %br
+          %strong 205:
+          Create token fail
     .span12.mt20
       .span4
         %h3 List beans
@@ -234,6 +257,27 @@
         %br
         %strong 205:
         Not authorize
+  %h5.span12.mb10 Passwords Controller
+  .span12.mb20
+    .span4
+      %h3 Reset Password
+      %p This call send an instruction email to reset password, This email content a link to reset password.
+      %p auth_token: mandatory parameter.
+      %p beans_count: the quantity of beans generated.
+      %p Type: POST
+      %p Url: http://107.20.196.96/api/consumer/passwords.json
+    .span7
+      .w_100 EXAMPLE
+      .span7.mb20 curl -X POST "http://107.20.196.96/api/consumer/passwords.json" -d "user[email]=fran@greenbean.com"
+      .w_100.mt20
+        STATUS CODE SUMMARY
+      .span6
+        %strong 200:
+        Send email successfully
+        %br
+        %strong 205:
+        Send email fail
+        
   %h5.span12.mb10 Beans Controller
   .span12.mb20
     .span4
