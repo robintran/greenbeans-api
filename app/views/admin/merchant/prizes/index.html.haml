@@ -1,0 +1,96 @@
+#middle.clearfix
+  .span4
+    %h3.big-head
+      Games and Prizes
+      = link_to "Add Prize", "#", class: "green-btn"
+    %h4.head-small ACTIVE RAFFLES & GIFTS
+    %ul.list-view.grid-view.clearfix
+      %li.dark
+        .title-item= link_to "Active Raffles"
+        .numb-item= Raffle.actives.size
+        .meta-item.clearfix
+          .view= link_to "View", "#"
+          .link= link_to "?", "#"
+      %li.dark
+        .title-item= link_to "Active Gifts"
+        .numb-item 16
+        .meta-item.clearfix
+          .view= link_to "View", "#"
+          .link= link_to "?", "#"
+    %h4.head-small PRIZES CLAIMED
+    %ul.list-view.grid-view.clearfix
+      %li
+        .title-item= link_to "Raffles Claimed"
+        .numb-item 22
+        .meta-item.clearfix
+          .view= link_to "View", "#"
+          .link= link_to "?", "#"
+      %li.dark
+        .title-item= link_to "Gifts Claimed"
+        .numb-item 33
+        .meta-item.clearfix
+          .view= link_to "View", "#"
+          .link= link_to "?", "#"
+    %h4.head-small PRIZES REDEEMED
+    %ul.list-view.grid-view.clearfix
+      %li.dark
+        .title-item= link_to "Raffles"
+        .numb-item 16
+        .meta-item.clearfix
+          .view= link_to "View", "#"
+          .link= link_to "?", "#"
+      %li.dark
+        .title-item= link_to "Gifts"
+        .numb-item 16
+        .meta-item.clearfix
+          .view= link_to "View", "#"
+          .link= link_to "?", "#"
+  .span5
+    .bg-inner
+      .head-box-active
+        %span 4
+        ACTIVE RAFFLES
+      %ul.list-active
+        - Raffle.actives.each do |raffle|
+          %li
+            .col1
+              %i
+            .col2
+              %h2= link_to "<strong>Raffle:</strong> $500 Cash</a>".html_safe
+              %div Countdown: #{distance_of_time_in_words(Time.now, raffle.drawing_time)}
+              %p
+                %label ENTRIES: 34
+                %label BEAN COST: 5
+            .col3= link_to "Detail", "#", class: "btn"
+        %li
+          .col1
+            %i
+          .col2
+            %h2= link_to "<strong>Raffle:</strong> $250 Gifts Certificate</a>".html_safe
+            %div Countdown: 10 Days, 5 hours, 16 minutes
+            %p
+              %label ENTRIES: 34
+              %label BEAN COST: 5
+          .col3= link_to "Detail", "#", class: "btn"
+        %li
+          .col1
+            %i.cart
+          .col2
+            %h2= link_to "<strong>Gift:</strong> 50% Discount Voucher</a>".html_safe
+            %div Quantity Available: 43
+            %p
+              %label CLAIMED: 34
+              %label BEAN COST: 15
+              %label REDEMPTIONS: 19
+          .col3= link_to "Detail", "#", class: "btn"
+        %li
+          .col1
+            %i.cart
+          .col2
+            %h2= link_to "<strong>Gift:</strong> Free$50 Tanning Lotion</a>".html_safe
+            %div Quantity Available: 41
+            %p
+              %label ENTRIES: 34
+              %label BEAN COST: 15
+              %label REDEMPTIONS: 9
+          .col3= link_to "Detail", "#", class: "btn"          

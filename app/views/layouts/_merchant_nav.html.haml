@@ -1,5 +1,15 @@
-= link_to "Home", root_path, :class => 'brand'
-%ul.nav
-  - if merchant_signed_in?
-    %li
-      = link_to 'Logout', destroy_merchant_session_path, method: :delete
+#header
+  .wrap-full
+    .logo
+      = link_to 'name', '/admin'
+    #nav
+      %ul.unstyled.clearfix
+        %li{class: "#{'active' if controller_name=='members'}"}=link_to "MEMBERS", "#"
+        %li{class: "#{'active' if controller_name=='prizes'}"}=link_to "PRIZES MANAGER", admin_merchant_prizes_path
+        %li{class: "#{'active' if controller_name=='actions'}"}=link_to "ACTIONS", admin_merchant_actions_path
+        %li{class: "#{'active' if controller_name=='reports'}"}=link_to "REPORTS", admin_merchant_reports_path
+    .pull-right
+      %p.hidden END SIMULATION
+      %p.logout
+        = current_merchant.name.capitalize
+        = link_to "log out", destroy_merchant_session_path, method: :delete

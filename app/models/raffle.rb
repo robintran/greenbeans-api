@@ -7,4 +7,7 @@ class Raffle < ActiveRecord::Base
   
   validates :name, presence: true
   validates :num_of_winner, presence: true, numericality: true
+  
+  scope :actives, lambda {where(['drawing_time > ?', DateTime.now])}
+  
 end
