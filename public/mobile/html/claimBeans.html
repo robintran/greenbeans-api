@@ -4,15 +4,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Green Beans</title>
-	<link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.2.0.css" />
 	<link rel="stylesheet"  href="../css/greenBeans.css" />
 	<script src="../js/jquery.js"></script>
-	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.js"></script>
 </head>
 <body>
 	<div data-role="page" id="claimBeans" class="claim-bean-screen" data-fullscreen="true">
 		<div>
-			<div id="claimBeans-logo-text"><img src="../resource/images/greenbeansText.png" width=208 class="logo"/></div>
+			<div id="claimBeans-logo-text"><img src="../resources/images/greenbeansText.png" width=208 class="logo"/></div>
 			<div class="hint-text">ENTER YOUR TOKEN</div>
 			<div id="claimBeansErrorText" class="error-text">Ouch. That bean code is not valid. Please try again...</div>
 			<input type="text" name="claimBeansTokenInput" id="claimBeansTokenInput" class="token-input" value=""/>
@@ -27,10 +27,10 @@
 					}
 				});
 			</script>
-
-			<div class="take-text">Take me to</div>
-			<a data-role="button" class="my-beans-btn">My Beans</a>
-
+				<div class="footer">
+					<div class="take-text">Take me to</div>
+					<a data-role="button" class="my-beans-btn">My Beans</a>
+				</div>
 			<script>
 				$( ".my-beans-btn" ).bind( "click", function(event, ui) {
 					$.mobile.changePage( "homeBeans.html", { transition: "slide"} );

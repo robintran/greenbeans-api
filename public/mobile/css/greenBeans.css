@@ -12,20 +12,21 @@ body {
 
 .home-screen {
 	height: 100%;
+	min-height: 460px !important;
 }
 
 
 .home-screen-content {
 	height: 100%;
-	background-image: url("../resource/images/whiteBkg.png");
+	background-image: url("../resources/images/whiteBkg.png");
 }
 
 .logo-text {
-	margin-top: 40px;
+	margin-top: 27px;
 }
 
 .logo-image {
-	margin-top: -30px;
+	margin-top: -33px;
 	margin-bottom: -45px;
 }
 
@@ -33,11 +34,12 @@ body {
 	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3d9524), color-stop(100%, #7ce061));
 	margin: 0;
 	text-align: center;
-	padding-bottom: 30px;
+	padding-bottom: 26px;
 }
 
 .home-screen .content-first .question{
 	margin-top: 20px;
+	margin-bottom: 7px;
 	color: white;
 	text-shadow: 0 1px 0 #009614;
 	font-size: 1.0em;
@@ -48,7 +50,7 @@ body {
 }
 
 .content-secondary .home-play-beans-btn {
-	background-image: url("../resource/images/play_beans_btn.png");
+	background-image: url("../resources/images/play_beans_btn.png");
 	height: 50px;
 	width: 284px;
 	margin: 20px auto 0 auto;
@@ -87,22 +89,24 @@ body {
 }
 
 .ui-icon-starIcon {
-	background-image: url("../resource/images/starIcon.png");
+	background-image: url("../resources/images/starIcon.png");
 }
 
 .ui-icon-cashIcon {
-	background-image: url("../resource/images/cashIcon.png");
+	background-image: url("../resources/images/cashIcon.png");
 }
 
 .ui-icon-joinIcon {
-	background-image: url("../resource/images/joinIcon.png");
+	background-image: url("../resources/images/joinIcon.png");
 }
 
-.join-btn, .cash-btn, .more-btn {
+.home-screen-content .join-btn,
+.home-screen-content .cash-btn,
+.home-screen-content .more-btn {
 	background: transparent;
 	border: none;
 	box-shadow: none;
-	margin: 0 auto;
+	margin: -1px auto;
 	background-image: none;
 	border-top: none;
 	height: 25px;
@@ -133,14 +137,16 @@ body {
 	margin: 0;
 	height: 100%;
 	text-align: center;
+	min-height: 460px !important;
 }
 
 .claim-bean-screen .logo {
-	margin-top: 40px;
+	margin-top: 27px;
 }
 
 .claim-bean-screen .hint-text {
-	margin-top: 33px;
+	margin-top: 24px;
+	margin-bottom: 16px;
 	font-size: 1.05em;
 	font-weight: bold;
 	color: white;
@@ -148,7 +154,8 @@ body {
 }
 
 .claim-bean-screen .take-text {
-	margin-top: 130px;
+	margin-top: 0;
+	width: 100%;
 	font-size: .8em;
 	font-weight: bold;
 	color: white;
@@ -162,9 +169,9 @@ body {
 	font-size: 0.65em;
 	font-weight: bold;
 	color: #6e7273;
-	text-shadow: 0 1px 0 #009614;
+	text-shadow: none;
 	padding: 5px 0 8px 0;
-	margin: 20px auto -10px auto;
+	margin: 0px auto 10px auto;
 	-moz-border-radius: 2px;
 	-o-border-radius: 2px;
 	-webkit-border-radius: 2px;
@@ -174,16 +181,23 @@ body {
 
 .claim-bean-screen .token-input {
 	width: 280px;
-	margin: 20px auto;
+	margin: 0px auto;
 	-moz-border-radius: 4px;
 	-o-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
+	background: #d3dadb;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #d3dadb), to( #d3dadb));
+	background-image: -webkit-linear-gradient( #d3dadb, #d3dadb);
+	background-image: -moz-linear-gradient( #d3dadb, #d3dadb);
+	background-image: -ms-linear-gradient( #d3dadb, #d3dadb);
+	background-image: -o-linear-gradient( #d3dadb, #d3dadb);
+	background-image: linear-gradient( #d3dadb, #d3dadb);
 }
 
 .claim-bean-screen .claim-beans-btn {
 	width: 280px;
-	margin: -10px auto;
+	margin: 10px auto;
 	-moz-border-radius: 8px;
 	-o-border-radius: 8px;
 	-webkit-border-radius: 8px;
@@ -200,11 +214,18 @@ body {
 	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7f8181), color-stop(2%, #7f8181), color-stop(3%, #777b7c), color-stop(100%, #686b6b));
 }
 
+.claim-bean-screen .footer {
+	position: absolute;
+	width: 100%;
+	top: 350px;
+	background: transparent;
+}
+
 .claim-bean-screen .my-beans-btn {
 	color: #fff;
 	width: 143px;
 	height: 41px;
-	margin: 10px auto;
+	margin: 12px auto;
 	-moz-border-radius: 8px;
 	-o-border-radius: 8px;
 	-webkit-border-radius: 8px;
@@ -212,6 +233,10 @@ body {
 	border: 1px solid #6e7273;
 	text-shadow: 0 1px 0 #535556;
 	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b2b2b4), color-stop(2%, #b2b2b4), color-stop(3%, #909193), color-stop(100%, #616163));
+}
+
+.claim-bean-screen .my-beans-btn .ui-btn-inner {
+	border: none;
 }
 
 .claim-bean-screen .my-beans-btn.ui-btn-down-c {
@@ -224,16 +249,18 @@ body {
 /*Page 3 home beans*/
 
 .home-bean-screen {
-	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e5e5e5), color-stop(100%, #ffffff));
+	background: #fcfcfc;
 	margin: 0;
 	height: 100%;
 	text-align: center;
+	min-height: 460px !important;
 }
 
 .home-bean-screen .home-bean-toolbar {
 	height: 44px;
-	background-image: url("../resource/images/toolbar_bg.png");
+	background-image: url("../resources/images/toolbar_bg.png");
 	border-top: none;
+	box-shadow: 0 10px 50px rgba(138, 136, 136, 0.5);
 }
 
 .home-bean-screen .home-bean-title {
@@ -242,7 +269,7 @@ body {
 
 .home-bean-screen .home-bean-toolbar-back-button {
 	background: rgba(0,0,0,.0);
-	background-image: url("../resource/images/back_btn.png");
+	background-image: url("../resources/images/back_btn.png");
 	width: 59px;
 	height: 32px;
 	border-radius: 0;
@@ -252,6 +279,184 @@ body {
 	box-shadow: none;
 }
 
+.home-bean-screen .home-bean-toolbar-back-button .ui-btn-inner {
+	border: none;
+}
+
 .home-bean-screen .home-bean-toolbar-back-button.ui-btn-down-a {
 	opacity: 0.7;
+}
+
+.home-bean-screen .home-beans-content {
+	width: 100%;
+}
+
+.home-bean-screen .profile {
+	text-align: left;
+	height: 70px;
+	width: 100%;
+	box-shadow: 0 10px 50px rgba(138, 136, 136, 0.5);
+}
+
+.home-bean-screen .profile .avatar {
+	margin-top: 20px;
+	margin-left: 15px;
+}
+
+.home-bean-screen .profile .details {
+	position: absolute;
+	top: 66px;
+	left: 55px;
+}
+
+.home-bean-screen .profile .details .name {
+	font-size: 15px;
+	font-weight: bold;
+	color: #49a131;
+}
+
+.home-bean-screen .profile .details .action {
+	font-size: 10px;
+	font-weight: bold;
+	color: #6e7273;
+}
+
+.home-bean-screen .profile .like-button,
+.home-bean-screen .profile .comment-button,
+.home-bean-screen .profile .more-button {
+	position: absolute;
+	top: 69px;
+	height: 26px;
+	margin: 0;
+	border: none;
+	box-shadow: none;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+.home-bean-screen .profile .like-button .ui-btn-inner,
+.home-bean-screen .profile .comment-button .ui-btn-inner,
+.home-bean-screen .profile .more-button .ui-btn-inner {
+	border: none;
+	padding: 0;
+	margin: 5px 0 0 20px;
+	color: #6e7273;
+}
+
+.home-bean-screen .profile .like-button {
+	width: 42px;
+	right: 93px;
+	background-image: url("../resources/images/like_btn.png");
+}
+
+.home-bean-screen .profile .comment-button {
+	width: 41px;
+	right: 47px;
+	background-image: url("../resources/images/comments_btn.png");
+}
+
+.home-bean-screen .profile .more-button {
+	width: 26px;
+	right: 15px;
+	background-image: url("../resources/images/more_btn.png");
+}
+
+.home-bean-screen .main .number-of-beans {
+	text-align: left;
+	margin: 16px 15px 12px 15px;
+	font-size: 12px;
+	color: #6e7273;
+}
+
+.home-bean-screen .main .use-beans-btn {
+	background-image: url("../resources/images/use_beans_btn.png");
+	height: 50px;
+	width: 281px;
+	margin: 20px auto 80px auto;
+}
+
+.home-bean-screen .main .use-beans-btn.ui-btn-hover-c {
+	opacity: 0.9;
+}
+
+.home-bean-screen .main .use-beans-btn.ui-btn-down-c {
+	opacity: 0.8;
+}
+
+.home-beans-tabbar {
+	height: 63px;
+	border: none;
+	background: transparent;
+	background-image: url("../resources/images/nav_bar.png");
+}
+
+.home-beans-tabbar .ui-btn-active {
+	border: none;
+	background-image: url("../resources/images/tabbar_item_selected.png");
+}
+
+.home-beans-tabbar .ui-navbar li .ui-btn {
+	height: 50px;
+	border: none;
+}
+
+.home-beans-tabbar .ui-navbar li .center-image.ui-btn {
+	height: 63px;
+}
+
+.home-beans-tabbar .ui-navbar .ui-btn-up-a,
+.home-beans-tabbar .ui-navbar .ui-btn-hover-a {
+	background: transparent;
+}
+
+.home-beans-tabbar .ui-navbar .center-image {
+	height: 63px;
+	background-image: url("../resources/images/center_item.png");
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+.home-beans-tabbar .ui-navbar .home-btn {
+	margin-top: 13px;
+	background-image: url("../resources/images/home.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.home-beans-tabbar .ui-navbar .comment-btn {
+	margin-top: 13px;
+	background-image: url("../resources/images/comment.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.home-beans-tabbar .ui-navbar .cash-btn {
+	margin-top: 13px;
+	background-image: url("../resources/images/cash.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.home-beans-tabbar .ui-navbar .setting-btn {
+	margin-top: 13px;
+	background-image: url("../resources/images/setting.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.home-beans-tabbar .ui-navbar .selected-btn.home-btn {
+	background-image: url("../resources/images/home_selected.png");
+}
+
+.home-beans-tabbar .ui-navbar .selected-btn.comment-btn {
+	background-image: url("../resources/images/comment_selected.png");
+}
+
+.home-beans-tabbar .ui-navbar .selected-btn.cash-btn {
+	background-image: url("../resources/images/cash_selected.png");
+}
+
+.home-beans-tabbar .ui-navbar .selected-btn.setting-btn {
+	background-image: url("../resources/images/setting_selected.png");
 }
