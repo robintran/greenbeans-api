@@ -7,7 +7,7 @@
     %ul.list-view.grid-view.clearfix
       %li.dark
         .title-item= link_to "Active Raffles"
-        .numb-item= Raffle.actives.size
+        .numb-item= current_merchant.raffles.actives.size
         .meta-item.clearfix
           .view= link_to "View", "#"
           .link= link_to "?", "#"
@@ -51,7 +51,7 @@
         %span 4
         ACTIVE RAFFLES
       %ul.list-active
-        - Raffle.actives.each do |raffle|
+        - current_merchant.raffles.actives.each do |raffle|
           %li
             .col1
               %i
