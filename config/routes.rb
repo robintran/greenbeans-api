@@ -9,6 +9,8 @@ Greenbean::Application.routes.draw do
       match 'reports' => "reports#index"
       root :to => 'reports#index'
       devise_for :merchants
+      
+      resources :prizes
     end
   end
   

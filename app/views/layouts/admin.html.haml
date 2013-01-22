@@ -12,4 +12,5 @@
     = yield(:head)
   %body
     = render 'layouts/merchant_nav' if current_merchant
-    = yield
+    #wrapper
+      = yield
