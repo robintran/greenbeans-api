@@ -6,9 +6,9 @@ class Bean < ActiveRecord::Base
   belongs_to :token 
   belongs_to :user
   
-  scope :actives, lambda {where(used_on: USED_ON[:none])}
+  scope :actives, lambda {where(used_on: USED_ON[:none], redeemed: false)}
   scope :redeemeds, lambda {where(redeemed: true)}
-  scope :on_raffles, lambda {where(used_on: USED_ON[:raffle])}
+  scope :on_raffles, lambda {where(used_on: USED_ON[:raffle], redeemed: false)}
   
   
   validates :code, :presence => true, :uniqueness => true 
@@ -24,5 +24,6 @@ class Bean < ActiveRecord::Base
     end
     self.code = str
     self.used_on = USED_ON[:none] unless self.used_on
+    self.redeemed = false if self.redeemed.nil?
   end
 end
