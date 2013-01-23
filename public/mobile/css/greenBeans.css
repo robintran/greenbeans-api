@@ -251,7 +251,8 @@ body {
 /*Page 3 home beans*/
 
 .home-bean-screen {
-	background: #fcfcfc;
+	/*background: #fcfcfc;*/
+	background-image: url("../resources/images/whiteBkg.png");
 	margin: 0;
 	height: 100%;
 	text-align: center;
@@ -296,7 +297,7 @@ body {
 .home-bean-screen .home-bean-toolbar-favourite-button {
 	background: rgba(0,0,0,.0);
 	background-image: url("../resources/images/star_btn.png");
-	width: 43px;
+	width: 54px;
 	height: 33px;
 	border-radius: 0;
 	border: none;
@@ -313,11 +314,20 @@ body {
 	opacity: 0.7;
 }
 
+.home-bean-screen .home-bean-toolbar-favourite-button .ui-btn-text {
+	margin-left: -35px;
+	top: 2px;
+	font-size: 10px;
+	color: #6e7273;
+	text-shadow: none;
+}
+
 .home-bean-screen .home-beans-content {
 	width: 100%;
 }
 
 .home-bean-screen .profile {
+	background: #fcfcfc;
 	text-align: left;
 	height: 70px;
 	width: 100%;
@@ -487,6 +497,15 @@ body {
 
 .home-beans-tabbar .ui-navbar .selected-btn.setting-btn {
 	background-image: url("../resources/images/setting_selected.png");
+}
+
+.home-beans-tabbar .center-image .ui-btn-text {
+	color: #6e7273;
+	margin-left: 28px;
+	top: -10px;
+	font-size: 10px;
+	font-weight: bold;
+	text-shadow: none;
 }
 
 /*signup page*/
