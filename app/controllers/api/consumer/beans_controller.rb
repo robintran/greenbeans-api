@@ -17,7 +17,9 @@ class Api::Consumer::BeansController < Api::Consumer::BaseController
     bean = Bean.find_by_code params[:code]
 
     if bean
-      if bean.used_on == Bean::USED_ON[:none]
+      if bean.redeemed
+        render json: {status: 205, valid: false, message: "#{bean.code} is redeemed"}
+      elsif bean.used_on == Bean::USED_ON[:none]
         render json: {status: 200, valid: true, message: "#{bean.code} is valid"}
       else
         render json: {status: 205, valid: false, message: "#{bean.code} is invalid, bean had been used on #{bean.used_on}"}
