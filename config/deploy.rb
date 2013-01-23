@@ -144,6 +144,7 @@ namespace :deploy do
     end
   end
 end
+after "deploy", "deploy:migrate"
 
 # Helper function
 def remote_file_exists?(full_path)
