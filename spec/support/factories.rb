@@ -2,7 +2,6 @@ FactoryGirl.define do
   factory :bean do
     token
     used_on ['raffle', 'gift', 'none'].sample
-    redeemed false
   end
   
   factory :merchant do

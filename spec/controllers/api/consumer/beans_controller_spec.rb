@@ -26,14 +26,13 @@ describe Api::Consumer::BeansController do
         bean.user_id = user.id
         bean.save
       end
-      beans.last.update_attribute(:redeemed, true)
       get :my_beans
       response.should be_success
       data = JSON.parse(response.body)
       data["status"].should eq 200
-      data["actives"].size.should eq 3
-      data["on_raffles"].size.should eq 2
-      data["redeemeds"].size.should eq 1
+      data["active_beans"]["size"].should eq 3
+      data["on_raffle_beans"]["size"].should eq 2
+      data["redeemed_beans"]["size"].should eq 5
     end
     
     it "should not success if user not signed in" do

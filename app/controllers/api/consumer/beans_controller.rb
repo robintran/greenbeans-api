@@ -6,7 +6,7 @@ class Api::Consumer::BeansController < Api::Consumer::BaseController
     @redeemed_beans = current_user.beans.redeemeds.map(&:code)
     @on_raffle_beans = current_user.beans.on_raffles.map(&:code)
     if current_user.beans.any?
-      render json: { status: 200, actives: @active_beans, redeemeds: @redeemed_beans, on_raffles: @on_raffle_beans }
+      render json: { status: 200, active_beans: {size: @active_beans.size, codes: @active_beans}, redeemed_beans: {size: @redeemed_beans.size, codes: @redeemed_beans}, on_raffle_beans: {size: @on_raffle_beans.size, code: @on_raffle_beans} }
     else
       render json: { status: 205, message: "You currently have no beans"}
     end
