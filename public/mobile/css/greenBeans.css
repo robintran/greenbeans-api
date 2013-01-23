@@ -488,3 +488,257 @@ body {
 .home-beans-tabbar .ui-navbar .selected-btn.setting-btn {
 	background-image: url("../resources/images/setting_selected.png");
 }
+
+/*signup page*/
+
+.signup-screen {
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3d9524), color-stop(100%, #7ce061));
+	margin: 0;
+	height: 100%;
+	text-align: center;
+	min-height: 460px !important;
+}
+
+.signup-screen .logo {
+	margin-top: 27px;
+}
+
+.signup-screen .hint-text {
+	margin-top: 13px;
+	margin-bottom: 12px;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	text-shadow: 0 1px 0 #009614;
+}
+
+.signup-screen .connect-facebook-btn {
+	background: transparent;
+	background-image: url("../resources/images/connect_facebook_btn.png");
+	height: 30px;
+	width: 183px;
+	border-radius: 0;
+	margin: 20px auto 0 auto;
+	box-shadow: none;
+	border: none;
+}
+
+.signup-screen .connect-facebook-btn.ui-btn-down-c {
+	background-image: url("../resources/images/connect_facebook_btn_selected.png");
+	box-shadow: none;
+	border: none;
+}
+
+.signup-screen .signup-form {
+	width: 272px;
+	margin: 0 auto;
+	background: #f1ffed;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: inset 0 1px 4px rgba(22, 92, 2, .66);
+	-o-box-shadow: inset 0 1px 4px rgba(22, 92, 2, .66);
+	-webkit-box-shadow: inset 0 1px 4px rgba(22, 92, 2, .66);
+	box-shadow: inset 0 1px 4px rgba(22, 92, 2, .66);
+}
+
+.signup-screen .signup-form .ui-field-contain {
+	padding: 0 6px;
+	margin: 0;
+	border-bottom: 1px solid #d4e0d0;
+}
+
+.signup-screen .signup-form .ui-field-contain label.ui-input-text {
+	vertical-align: top;
+	display: inline-block;
+	margin: 0;
+}
+.signup-screen .signup-form .ui-field-contain input.ui-input-text {
+	background-image: none;
+	display: inline-block;
+}
+
+.signup-screen .signup-form .ui-field-contain .ui-input-text {
+	text-align: left;
+	padding: 6px 0;
+	font-weight: bold;
+}
+.signup-screen .signup-form .ui-field-contain label.ui-input-text {
+	width: 35%;
+}
+.signup-screen .signup-form .ui-field-contain input.ui-input-text {
+	width: 55%;
+}
+
+.signup-screen .signup-form .ui-field-contain.username {
+	-moz-border-radius: 4px 4px 0 0;
+	-o-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+
+.signup-screen .signup-form .ui-field-contain.password {
+	-moz-border-radius: 0 0 4px 4px;
+	-o-border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+}
+
+.signup-screen .signup-form .ui-body-c {
+	margin: 0;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+.signup-screen .create-account-btn {
+	color: #6e7273;
+	width: 274px;
+	height: 41px;
+	margin: 8px auto;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #b9bebf;
+	text-shadow: 0 1px 0 #535556;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eef2f3), color-stop(2%, #eef2f3), color-stop(3%, #e0e8e9), color-stop(100%, #c0c5c6));
+}
+
+.signup-screen .create-account-btn .ui-btn-inner {
+	border: none;
+}
+
+.signup-screen .create-account-btn.ui-btn-down-c {
+	color: #ddd;
+	border: 1px solid #6e7273;
+	text-shadow: 0 1px 0 #3a3b3b;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b2b2b4), color-stop(2%, #b2b2b4), color-stop(3%, #909193), color-stop(100%, #616163));
+}
+
+.signup-screen .sign-in-btn {
+	background: transparent;
+	background-image: url("../resources/images/signin_btn_bg.png");
+	height: 73px;
+	width: 270px;
+	border-radius: 0;
+	margin: 21px auto 0 auto;
+	box-shadow: none;
+	border: none;
+}
+
+.signup-screen .sign-in-btn .ui-btn-inner {
+	padding-top: 27px;
+	font-size: 12px;
+	text-shadow: 0 1px 0 #01a000;
+	color: white;
+	border: none;
+}
+
+.signup-screen .sign-in-btn.ui-btn-down-c .ui-btn-inner {
+	color: #e2fbe1;
+}
+
+/*signin page*/
+
+.signin-screen {
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3d9524), color-stop(100%, #7ce061));
+	margin: 0;
+	height: 100%;
+	text-align: center;
+	min-height: 460px !important;
+}
+
+.signin-screen .logo {
+	margin-top: 27px;
+	margin-bottom: 20px;
+}
+
+.signin-screen .signin-form {
+	width: 272px;
+	margin: 0 auto;
+	background: #f1ffed;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: inset 0 1px 4px rgba(22, 92, 2, .66);
+	-o-box-shadow: inset 0 1px 4px rgba(22, 92, 2, .66);
+	-webkit-box-shadow: inset 0 1px 4px rgba(22, 92, 2, .66);
+	box-shadow: inset 0 1px 4px rgba(22, 92, 2, .66);
+}
+
+.signin-screen .signin-form .ui-field-contain {
+	padding: 0 6px;
+	margin: 0;
+	border-bottom: 1px solid #d4e0d0;
+}
+
+.signin-screen .signin-form .ui-field-contain label.ui-input-text {
+	vertical-align: top;
+	display: inline-block;
+	margin: 0;
+}
+.signin-screen .signin-form .ui-field-contain input.ui-input-text {
+	background-image: none;
+	display: inline-block;
+}
+
+.signin-screen .signin-form .ui-field-contain .ui-input-text {
+	text-align: left;
+	padding: 6px 0;
+	font-weight: bold;
+}
+.signin-screen .signin-form .ui-field-contain label.ui-input-text {
+	width: 35%;
+}
+.signin-screen .signin-form .ui-field-contain input.ui-input-text {
+	width: 55%;
+}
+
+.signin-screen .signin-form .ui-field-contain.username {
+	-moz-border-radius: 4px 4px 0 0;
+	-o-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+
+.signin-screen .signin-form .ui-field-contain.password {
+	-moz-border-radius: 0 0 4px 4px;
+	-o-border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+}
+
+.signin-screen .signin-form .ui-body-c {
+	margin: 0;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+.signin-screen .signin-btn {
+	color: #6e7273;
+	width: 274px;
+	height: 41px;
+	margin: 8px auto;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #b9bebf;
+	text-shadow: 0 1px 0 #535556;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eef2f3), color-stop(2%, #eef2f3), color-stop(3%, #e0e8e9), color-stop(100%, #c0c5c6));
+}
+
+.signin-screen .signin-btn .ui-btn-inner {
+	border: none;
+}
+
+.signin-screen .signin-btn.ui-btn-down-c {
+	color: #ddd;
+	border: 1px solid #6e7273;
+	text-shadow: 0 1px 0 #3a3b3b;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b2b2b4), color-stop(2%, #b2b2b4), color-stop(3%, #909193), color-stop(100%, #616163));
+}

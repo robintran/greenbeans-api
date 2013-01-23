@@ -6,6 +6,7 @@
 	<title>Green Beans</title>
 	<link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.2.0.css" />
 	<link rel="stylesheet"  href="../css/greenBeans.css" />
+	<script src="../js/utils.js"></script>
 	<script src="../js/jquery.js"></script>
 	<script src="../js/jquery.mobile-1.2.0.js"></script>
 </head>
@@ -20,11 +21,7 @@
 
 			<script>
 				$( ".claim-beans-btn" ).bind( "click", function(event, ui) {
-					if ($('#claimBeansTokenInput').val() == "B0S53K" || $('#claimBeansTokenInput').val() == "942WOQ" || $('#claimBeansTokenInput').val() == "S8DO91") {
-						$.mobile.changePage( "homeBeans.html", { transition: "slide"} );
-					} else {
-						$("#claimBeansErrorText").show("fast");
-					}
+					claimBeans($('#claimBeansTokenInput').val());
 				});
 			</script>
 				<div class="footer">
@@ -33,7 +30,7 @@
 				</div>
 			<script>
 				$( ".my-beans-btn" ).bind( "click", function(event, ui) {
-					$.mobile.changePage( "homeBeans.html", { transition: "slide"} );
+					getMyBeans();
 				});
 			</script>
 
