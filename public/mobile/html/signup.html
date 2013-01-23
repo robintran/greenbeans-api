@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign Up</title>
+	<link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.2.0.css" />
+	<link rel="stylesheet"  href="../css/greenBeans.css" />
+	<script src="../js/utils.js"></script>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.js"></script>
+</head>
+<body>
+	<div data-role="page" id="signup" class="signup-screen" data-fullscreen="true">
+		<div>
+			<div id="signup-logo-text"><img src="../resources/images/greenbeansText.png" width=208 class="logo"/></div>
+			<a data-role="button" class="connect-facebook-btn"></a>
+			<div class="hint-text">Create an Account</div>
+			<div class="signup-form">
+				<div data-role="fieldcontain" class="username">
+					<label for="signup-name">Name</label>
+					<input type="text" name="signup-name" id="signup-name" value="" />
+				</div>
+				<div data-role="fieldcontain" class="email">
+					<label for="signup-email">Email</label>
+					<input type="email" name="signup-email" id="signup-email" value="" />
+				</div>
+				<div data-role="fieldcontain" class="password">
+					<label for="signup-password">Password</label>
+					<input type="password" name="signup-password" id="signup-password" value="" />
+				</div>
+			</div>
+			<a data-role="button" class="create-account-btn">Create Account</a>
+			<a data-role="button" class="sign-in-btn">or sign into your existing account</a>
+			<script>
+				$( ".sign-in-btn" ).bind( "click", function(event, ui) {
+					$.mobile.changePage( "signin.html", { transition: "slide"} );
+				});
+			</script>
+		</div>
+	</div>
+</body>
+</html>

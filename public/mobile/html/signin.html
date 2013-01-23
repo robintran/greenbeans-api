@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign Up</title>
+	<link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.2.0.css" />
+	<link rel="stylesheet"  href="../css/greenBeans.css" />
+	<script src="../js/utils.js"></script>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.js"></script>
+</head>
+<body>
+	<div data-role="page" id="signin" class="signin-screen" data-fullscreen="true">
+		<div>
+			<div id="signin-logo-text"><img src="../resources/images/greenbeansText.png" width=208 class="logo"/></div>
+			<div class="signin-form">
+				<div data-role="fieldcontain" class="email">
+					<label for="signin-email">Email</label>
+					<input type="email" name="signin-email" id="signin-email" value="" />
+				</div>
+				<div data-role="fieldcontain" class="password">
+					<label for="signin-password">Password</label>
+					<input type="password" name="signin-password" id="signin-password" value="" />
+				</div>
+			</div>
+			<a data-role="button" class="signin-btn">Signin</a>
+
+			<script>
+				$( ".signin-btn" ).bind( "click", function(event, ui) {
+					signin($('#signin-email').val(), $('#signin-password').val());
+				});
+			</script>
+
+		</div>
+	</div>
+</body>
+</html>
