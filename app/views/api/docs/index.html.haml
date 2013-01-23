@@ -277,8 +277,27 @@
         %br
         %strong 205:
         Send email fail
-        
+      
   %h5.span12.mb10 Beans Controller
+  .span12.mb20
+    .span4
+      %h3 Validate Valid of Bean
+      %p Return beans code list for consumer. This API call requires authentication, with auth_token from the LOGIN call.
+      %p Type: GET
+      %p Url: http://107.20.196.96/api/consumer/beans/my_beans.json
+    .span7
+      .w_100 EXAMPLE
+      .span7.mb20 curl 'http://107.20.196.96/api/consumer/beans/my_beans.json
+      .w_100.mt20
+        STATUS CODE SUMMARY
+      .span6
+        %strong 200:
+        Response successfully
+        %br
+        %strong 205:
+        User has no beans
+      .span6.word_wrap
+        {"status":200,"actives":["UYETLG","NEG6YD","IWH2RA","1S3APT","MCRBCA","1HW376"],"redeemeds":["6ZJ11K","UYETLG","Q27F9E","1S3APT","49C4CO","S79B0U","MCRBCA","NOF6CE","1HW376","ZXZUJS"],"on_raffles":["RFJQRF","6ZJ11K","HV5MKM","49C4CO","S79B0U","NOF6CE","X2L1VH","UTI3WN"]}
   .span12.mb20
     .span4
       %h3 Validate Valid of Bean

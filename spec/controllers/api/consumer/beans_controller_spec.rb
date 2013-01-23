@@ -14,7 +14,7 @@ describe Api::Consumer::BeansController do
       get :my_beans
       response.should be_success
       data = JSON.parse(response.body)
-      data["status"].should eq 200
+      data["status"].should eq 205
       data["message"].should eq "You currently have no beans"
     end
     

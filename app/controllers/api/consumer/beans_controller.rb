@@ -8,7 +8,7 @@ class Api::Consumer::BeansController < Api::Consumer::BaseController
     if current_user.beans.any?
       render json: { status: 200, actives: @active_beans, redeemeds: @redeemed_beans, on_raffles: @on_raffle_beans }
     else
-      render json: { status: 200, message: "You currently have no beans"}
+      render json: { status: 205, message: "You currently have no beans"}
     end
   end
   
