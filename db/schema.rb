@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115080845) do
+ActiveRecord::Schema.define(:version => 20130123040305) do
 
   create_table "beans", :force => true do |t|
-    t.string   "code",                            :null => false
-    t.integer  "token_id",                        :null => false
-    t.string   "used_on",     :default => "none"
-    t.boolean  "is_checkout", :default => false
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.string   "code",                           :null => false
+    t.integer  "token_id",                       :null => false
+    t.string   "used_on",    :default => "none"
+    t.boolean  "redeemed",   :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "user_id"
   end
 
   add_index "beans", ["code"], :name => "index_beans_on_code"
@@ -95,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20130115080845) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "authentication_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -57,11 +57,12 @@ Greenbean::Application.routes.draw do
       resources :beans do
         collection do
           get :validate
+          get :my_beans
         end
       end
     end
   end
-
+  
   root :to => 'api/docs#index'
 end
 

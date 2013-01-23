@@ -1,10 +1,16 @@
 class Bean < ActiveRecord::Base
-  USED_ON = { raftle: 'raftle', gift: 'gift', none: 'none'}
+  USED_ON = { raffle: 'raffle', gift: 'gift', none: 'none'}
 
-  attr_accessible :used_on, :code, :token_id, :is_checkout 
+  attr_accessible :used_on, :code, :token_id, :redeemed
 
   belongs_to :token 
-
+  belongs_to :user
+  
+  scope :actives, lambda {where(used_on: USED_ON[:none])}
+  scope :redeemeds, lambda {where(redeemed: true)}
+  scope :on_raffles, lambda {where(used_on: USED_ON[:raffle])}
+  
+  
   validates :code, :presence => true, :uniqueness => true 
 
   before_validation :set_code_and_use_type 

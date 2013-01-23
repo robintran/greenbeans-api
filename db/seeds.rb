@@ -1,8 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-m = Merchant.create(email: 'fran@greenbean.com', name: 'fran', password: 'password', password_confirmation: 'password')
+merchant = Merchant.find_by_email 'fran@greenbean.com'
+merchant = Merchant.create(email: 'fran@greenbean.com', name: 'fran', password: 'password', password_confirmation: 'password') unless merchant
+
+consumer = User.find_by_email 'bhanu@greenbean.com'
+consumer = User.create(email: 'bhanu@greenbean.com', password: 'password', password_confirmation: 'password') unless consumer
+
+token = merchant.tokens.create(beans_count: 20)
+
+token.beans.each do |bean|
+  bean.user = consumer
+  bean.used_on = ["raffle","gift","none"].sample
+  bean.redeemed = [true,false].sample
+  bean.save
+end
