@@ -23,7 +23,7 @@ class Api::Consumer::SessionsController < Api::Consumer::BaseController
   end
 
   def delete
-    current_userreset_authentication_token!
+    current_user.reset_authentication_token!
     hash = {}
     if current_user.reload.authentication_token != params[:auth_token]
       sign_out(:user)
