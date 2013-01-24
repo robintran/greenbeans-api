@@ -105,7 +105,7 @@ function loadMyBeans () {
     var params = {
     }
     $.mobile.showPageLoadingMsg();
-    var url = 'http://107.20.196.96/api/consumer/beans/my_beans.json?auth_token=2' + g_auth_token;
+    var url = 'http://107.20.196.96/api/consumer/beans/my_beans.json?auth_token=' + g_auth_token;
     $.ajax({
         type: 'GET',
         dataType: 'json',
