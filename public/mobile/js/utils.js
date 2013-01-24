@@ -155,6 +155,8 @@ function onLogoutBtnTap() {
         params, function(response) {
             $.mobile.hidePageLoadingMsg();
             if (response.status == 200) {
+                window.localStorage.removeItem("gb_auth_token");
+                g_auth_token = null;
                 $.mobile.changePage( "claimBeans.html", { transition: "slide", reverse: true} );
             } else {
                 $.mobile.changePage( "claimBeans.html", { transition: "slide", reverse: true} );
