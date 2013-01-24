@@ -508,6 +508,31 @@ body {
 	text-shadow: none;
 }
 
+.setting-screen .logout-btn {
+	color: #6e7273;
+	width: 274px;
+	height: 41px;
+	margin: 8px auto;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #b9bebf;
+	text-shadow: 0 1px 0 #535556;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eef2f3), color-stop(2%, #eef2f3), color-stop(3%, #e0e8e9), color-stop(100%, #c0c5c6));
+}
+
+.setting-screen .logout-btn .ui-btn-inner {
+	border: none;
+}
+
+.setting-screen .logout-btn.ui-btn-down-c {
+	color: #ddd;
+	border: 1px solid #6e7273;
+	text-shadow: 0 1px 0 #3a3b3b;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b2b2b4), color-stop(2%, #b2b2b4), color-stop(3%, #909193), color-stop(100%, #616163));
+}
+
 /*signup page*/
 
 .signup-screen {
@@ -760,4 +785,12 @@ body {
 	border: 1px solid #6e7273;
 	text-shadow: 0 1px 0 #3a3b3b;
 	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b2b2b4), color-stop(2%, #b2b2b4), color-stop(3%, #909193), color-stop(100%, #616163));
+}
+
+.login-fail-dialog .ui-content {
+	padding: 20px;
+}
+
+.my-beans-fail-dialog .ui-content {
+	padding: 20px;
 }

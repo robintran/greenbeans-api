@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Sign Up</title>
+	<title>Sign In</title>
 	<link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.2.0.css" />
 	<link rel="stylesheet"  href="../css/greenBeans.css" />
-	<script src="../js/utils.js"></script>
 	<script src="../js/jquery.js"></script>
 	<script src="../js/jquery.mobile-1.2.0.js"></script>
+	<script src="../js/utils.js"></script>
 </head>
 <body>
 	<div data-role="page" id="signin" class="signin-screen" data-fullscreen="true">
@@ -25,13 +25,20 @@
 				</div>
 			</div>
 			<a data-role="button" class="signin-btn">Sign In</a>
-
 			<script>
 				$( ".signin-btn" ).bind( "click", function(event, ui) {
 					signin($('#signin-email').val(), $('#signin-password').val());
 				});
 			</script>
-
+			<div data-role="popup" id="loginFailDialog" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="login-fail-dialog ui-corner-all">
+				<div data-role="header" data-theme="b" class="ui-corner-top">
+					<h1>Login Failure</h1>
+				</div>
+				<div data-role="content" data-theme="b" class="ui-corner-bottom ui-content">
+					<h3 class="ui-title" id="loginFailDialog_msg"></h3>
+					<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">OK</a> 
+				</div>
+			</div>
 		</div>
 	</div>
 </body>

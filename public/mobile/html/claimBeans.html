@@ -6,9 +6,9 @@
 	<title>Green Beans</title>
 	<link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.2.0.css" />
 	<link rel="stylesheet"  href="../css/greenBeans.css" />
-	<script src="../js/utils.js"></script>
 	<script src="../js/jquery.js"></script>
 	<script src="../js/jquery.mobile-1.2.0.js"></script>
+	<script src="../js/utils.js"></script>
 </head>
 <body>
 	<div data-role="page" id="claimBeans" class="claim-bean-screen" data-fullscreen="true">
@@ -34,6 +34,15 @@
 				});
 			</script>
 
+		</div>
+		<div data-role="popup" id="getMyBeansFailDialog" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="my-beans-fail-dialog ui-corner-all">
+			<div data-role="header" data-theme="b" class="ui-corner-top">
+				<h1>Get My Beans Failure</h1>
+			</div>
+			<div data-role="content" data-theme="b" class="ui-corner-bottom ui-content">
+				<h3 class="ui-title" id="getMyBeansFailDialog_msg"></h3>
+				<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">OK</a> 
+			</div>
 		</div>
 	</div>
 </body>
